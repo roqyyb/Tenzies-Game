@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import './normalize.css'
 import './App.css'
 import Die from './Components/Die'
+import { nanoid } from 'nanoid'
 
 function App() {
   const [dice, setDice] = useState(generateDice())
@@ -12,17 +13,20 @@ function App() {
     const dice = [];
 
     for(let i=0; i<10; i++){
-      dice.push(Math.ceil(Math.random() * 6))
+      dice.push({
+        value: (Math.ceil(Math.random() * 6)),
+        id: nanoid()
+      })
     }
 
     return dice
   }
   
   //creates die elements
-  const dieElements = dice.map((num, i) => {
+  const dieElements = dice.map( obj => {
     return <Die
-      key={i}
-      value={num}
+      key={obj.id}
+      value={obj.value}
     />
   })
 
