@@ -67,6 +67,10 @@ main header {
     font-size: 2.5rem;
     margin-top: 4rem;
   }
+
+  main header {
+    font-size: 4rem;
+  }
 }
 
 .die {
