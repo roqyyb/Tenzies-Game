@@ -6,4 +6,6 @@ body {
   /* min-width: 320px; */
   min-height: 100vh;
   background: #0b2434;
+  font-family: "Inter", sans-serif;
+  font-family: "Karla", sans-serif;
 }
