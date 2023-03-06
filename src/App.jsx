@@ -30,6 +30,11 @@ function App() {
     />
   })
 
+  //handleClick
+  function handleClick(){
+    setDice(generateDice())
+  }
+
   return (
     <div className="App">
       <main>
@@ -37,7 +42,9 @@ function App() {
         {dieElements}
         </section>
 
-        <button>Roll</button>
+        <button
+          onClick={handleClick}
+        >Roll</button>
       </main>
     </div>
   )
