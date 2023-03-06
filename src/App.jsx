@@ -5,6 +5,7 @@ import './App.css'
 import Die from './Components/Die'
 
 function App() {
+  const [dice, setDice] = useState(generateDice())
   
   // generates new dice
   function generateDice(){
@@ -18,7 +19,7 @@ function App() {
   }
   
   //creates die elements
-  const dieElements = generateDice().map((num, i) => {
+  const dieElements = dice.map((num, i) => {
     return <Die
       key={i}
       value={num}
