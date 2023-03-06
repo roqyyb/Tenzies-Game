@@ -9,6 +9,10 @@ export default function Die(){
         <DieDots />
         <DieDots />
         <DieDots />
+        <DieDots />
+        <DieDots />
+        <DieDots />
+        <DieDots />
         </>
     )
 }
