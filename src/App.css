@@ -20,7 +20,7 @@ body {
 }
 
 main {
-  width: auto;
+  max-width: 32rem;
   min-height: 32rem;
   background: #f5f5f5;
   border-radius: 10px;
@@ -80,8 +80,8 @@ main .text {
 
 @media screen and (min-width: 768px) {
   main {
-    width: 64rem;
-    height: 64rem;
+    max-width: 64rem;
+    max-height: 64rem;
   }
 
   main button {
