@@ -75,6 +75,7 @@ function App() {
   return (
     <div className="App">
       <main>
+        <header>Tenzies</header>
         <section className="dice-container">
         {dieElements}
         </section>
