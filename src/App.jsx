@@ -60,16 +60,21 @@ function App() {
 
   //handleClick
   function handleClick(){
-    setDice(oldDice=>{
+    if(!tenzies){
+      setDice(oldDice=>{
 
-      const newDice = oldDice.map(obj=>{
-        return(
-          obj.isHeld? obj : {...obj, value:(Math.ceil(Math.random() * 6))}
-        )
+        const newDice = oldDice.map(obj=>{
+          return(
+            obj.isHeld? obj : {...obj, value:(Math.ceil(Math.random() * 6))}
+          )
+        })
+  
+        return newDice
       })
-
-      return newDice
-    })
+    } else{
+      setDice(generateDice())
+      setTenzies(false)
+    }
   }
 
   //holdDice 
