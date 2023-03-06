@@ -5,13 +5,31 @@ import './App.css'
 import Die from './Components/Die'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  // generates new dice
+  function generateDice(){
+    const dice = [];
+
+    for(let i=0; i<10; i++){
+      dice.push(Math.ceil(Math.random() * 6))
+    }
+
+    return dice
+  }
+  
+  //creates die elements
+  const dieElements = generateDice().map((num, i) => {
+    return <Die
+      key={i}
+      value={num}
+    />
+  })
 
   return (
     <div className="App">
       <main>
         <section className="dice-container">
-        <Die/>
+        {dieElements}
         </section>
       </main>
     </div>
