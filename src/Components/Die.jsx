@@ -3,7 +3,7 @@ export default function Die(props){
     const value = props.value;
     const styles = {
         backgroundColor: props.isHeld? '#59E391': '#fff',
-        borderColor: props.isHeld ? '#59E391': '#2b283a'
+        borderColor: props.isHeld ? '#d1e359': '#2b283a'
     }
 
     switch (value) {
