@@ -100,7 +100,7 @@ function App() {
 
         <button
           onClick={handleClick}
-        >Roll</button>
+        >{tenzies ? 'New Game': 'Roll'}</button>
       </main>
     </div>
   )
