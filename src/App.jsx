@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import './normalize.css'
 import './App.css'
 
 function App() {
@@ -7,7 +8,9 @@ function App() {
 
   return (
     <div className="App">
+      <main>
       <h1>App component here</h1>
+      </main>
     </div>
   )
 }
