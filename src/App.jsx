@@ -8,18 +8,28 @@ import { nanoid } from 'nanoid'
 function App() {
   const [dice, setDice] = useState(generateDice())
   
+
+
+  //generate a die
+  function generateDie(){
+    return(
+      {
+        value: (Math.ceil(Math.random() * 6)),
+        id: nanoid(),
+        isHeld: false
+      }
+    )
+  }
+  
   // generates new dice
   function generateDice(){
-    const dice = [];
+    const diceArr = [];
 
     for(let i=0; i<10; i++){
-      dice.push({
-        value: (Math.ceil(Math.random() * 6)),
-        id: nanoid()
-      })
+      diceArr.push(generateDie())
     }
 
-    return dice
+    return diceArr
   }
   
   //creates die elements
@@ -27,12 +37,39 @@ function App() {
     return <Die
       key={obj.id}
       value={obj.value}
+      isHeld={obj.isHeld}
+      holdDice= {()=> holdDice(obj.id)}
     />
   })
 
   //handleClick
   function handleClick(){
-    setDice(generateDice())
+    setDice(oldDice=>{
+
+      const newDice = oldDice.map(obj=>{
+        return(
+          obj.isHeld? obj : {...obj, value:(Math.ceil(Math.random() * 6))}
+        )
+      })
+
+      return newDice
+    })
+  }
+
+  //holdDice 
+
+  function holdDice(id){
+    setDice(oldDice =>{
+
+      const newDice = oldDice.map(obj=>{
+        return (
+          obj.id === id ? {...obj, isHeld: !(obj.isHeld)} : obj
+        )
+      })
+
+      return newDice
+    })
+
   }
 
   return (

@@ -1,12 +1,16 @@
 
 export default function Die(props){
     const value = props.value;
+    const styles = {
+        backgroundColor: props.isHeld? '#59E391': '#fff',
+        borderColor: props.isHeld ? '#59E391': '#2b283a'
+    }
 
     switch (value) {
 
         case 1:
           return (
-            <div className="die first-face">
+            <div onClick={props.holdDice} style={styles} className="die first-face">
                 <span className="dot"></span>
             </div>
           )
@@ -14,7 +18,7 @@ export default function Die(props){
         
         case 2:
           return(
-            <div className="die second-face">
+            <div onClick={props.holdDice} style={styles} className="die second-face">
                 <span className="dot"></span>
                 <span className="dot"></span>
             </div>
@@ -23,7 +27,7 @@ export default function Die(props){
           
         case 3:
            return(
-            <div className="die third-face">
+            <div onClick={props.holdDice} style={styles} className="die third-face">
                 <span className="dot"></span>
                 <span className="dot"></span>
                 <span className="dot"></span>
@@ -33,7 +37,7 @@ export default function Die(props){
           
         case 4:
           return(
-            <div className="die fourth-face">
+            <div onClick={props.holdDice} style={styles} className="die fourth-face">
                 <div className="column">
                     <span className="dot"></span>
                     <span className="dot"></span>
@@ -48,7 +52,7 @@ export default function Die(props){
           
         case 5:
           return(
-            <div className="die fifth-face">
+            <div onClick={props.holdDice} style={styles} className="die fifth-face">
     
                 <div className="column">
                     <span className="dot"></span>
@@ -70,7 +74,7 @@ export default function Die(props){
           
         case 6:
           return(
-            <div className="die sixth-face">
+            <div onClick={props.holdDice} style={styles} className="die sixth-face">
                 <div className="column">
                     <span className="dot"></span>
                     <span className="dot"></span>
