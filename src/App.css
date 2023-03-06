@@ -8,6 +8,17 @@
   font-size: 62.5%;
 }
 
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #0b2434;
+  font-family: "Inter", sans-serif;
+  font-family: "Karla", sans-serif;
+}
+
 main {
   width: auto;
   min-height: 32rem;
