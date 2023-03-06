@@ -10,7 +10,9 @@ function App() {
   return (
     <div className="App">
       <main>
+        <section className="dice-container">
         <Die/>
+        </section>
       </main>
     </div>
   )
