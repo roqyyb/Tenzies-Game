@@ -7,7 +7,7 @@ import { nanoid } from 'nanoid'
 
 function App() {
   const [dice, setDice] = useState(generateDice())
-  
+  const [tenzies, setTenzies] = useState(false)
 
 
   //generate a die
