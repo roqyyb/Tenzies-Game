@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './normalize.css'
 import './App.css'
@@ -9,6 +9,21 @@ import Confetti from 'react-confetti'
 function App() {
   const [dice, setDice] = useState(generateDice())
   const [tenzies, setTenzies] = useState(false)
+
+  useEffect(()=>{
+
+    const allHeld = dice.every(obj=> obj.isHeld === true);
+    const allSameValue = dice.every(obj => obj.value === dice[0].value)
+    
+    if(allHeld && allSameValue){
+      setTenzies(true)
+    } else{
+      setTenzies(false)
+    }
+
+  }, [dice])
+
+
 
 
   //generate a die
@@ -76,7 +91,7 @@ function App() {
   return (
     <div className="App">
       <main>
-        <Confetti/>
+        {tenzies && <Confetti/>}
         <header>Tenzies</header>
         <p className="text">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p> 
         <section className="dice-container">
