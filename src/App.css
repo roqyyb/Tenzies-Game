@@ -163,6 +163,7 @@ main .text {
     padding: 1rem;
     height: 8rem;
     width: 8rem;
+    border-radius: 2rem;
   }
 
   .dot {
