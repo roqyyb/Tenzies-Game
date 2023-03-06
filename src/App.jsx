@@ -36,6 +36,8 @@ function App() {
         <section className="dice-container">
         {dieElements}
         </section>
+
+        <button>Roll</button>
       </main>
     </div>
   )
