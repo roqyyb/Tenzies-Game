@@ -65,7 +65,7 @@ function App() {
 
         const newDice = oldDice.map(obj=>{
           return(
-            obj.isHeld? obj : {...obj, value:(Math.ceil(Math.random() * 6))}
+            obj.isHeld? obj : generateDie()
           )
         })
   
